@@ -7,6 +7,8 @@ import { useHeader } from './hooks/useHeader';
 export const Header = () => {
   const { functions, state } = useHeader();
 
+  console.log('fd');
+
   return (
     <AppShell.Header px={250} py={30}>
       <Group justify='space-between'>
