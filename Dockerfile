@@ -1,4 +1,4 @@
-FROM node:20.11.0-alpine
+FROM node:20.11.0-alpine as build
 
 WORKDIR /app
 
@@ -9,8 +9,12 @@ COPY . .
 
 RUN npm run build
 
-RUN npm i -g serve
+FROM nginx:stable-alpine
 
-CMD ["serve", "-s", "dist"]
+COPY --from=build /app/dist /usr/share/nginx/html
 
-EXPOSE 3000
+COPY --from=build /app/nginx.conf /etc/nginx/conf.d/default.conf
+
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]
