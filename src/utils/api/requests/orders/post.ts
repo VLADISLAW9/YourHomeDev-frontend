@@ -1,8 +1,8 @@
 import { api } from '@/utils/api/instance';
 
 export interface PostOrderParams {
-  fio: string;
   address: string;
+  fio: string;
   phoneNumber: string;
   products: {
     productId: number;

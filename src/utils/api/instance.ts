@@ -1,4 +1,5 @@
 import type { AxiosResponse } from 'axios';
+
 import axios from 'axios';
 
 const baseURL = import.meta.env.VITE_API_BACKEND_URL;

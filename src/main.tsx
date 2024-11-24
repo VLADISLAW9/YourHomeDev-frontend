@@ -1,8 +1,9 @@
-import ReactDOM from 'react-dom/client';
 import { createTheme } from '@mantine/core';
 import { QueryClient } from '@tanstack/react-query';
+import ReactDOM from 'react-dom/client';
 
 import type { ProvidersProps } from '@/src/providers';
+
 import { Providers } from '@/src/providers';
 
 import { App } from './App';

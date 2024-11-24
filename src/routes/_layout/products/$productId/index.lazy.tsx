@@ -1,6 +1,6 @@
-import { LuShoppingCart } from 'react-icons/lu';
 import { Button, Card, Flex, Image, Stack, Text, Title } from '@mantine/core';
 import { createLazyFileRoute } from '@tanstack/react-router';
+import { LuShoppingCart } from 'react-icons/lu';
 
 import { PageLoader } from '@/src/components';
 
@@ -13,20 +13,20 @@ const ProductPage = () => {
 
   return (
     <Flex justify='space-between'>
-      <Image radius='lg' w={800} h={400} src={state.product.image} alt={state.product.name} />
+      <Image alt={state.product.name} h={400} radius='lg' src={state.product.image} w={800} />
       <Stack ml={100} style={{ flex: 1 }}>
         <Title>{state.product.name}</Title>
         <Text c='dimmed'>{state.product.description ?? 'Нет описания'}</Text>
       </Stack>
       <Stack>
         <Card
+          withBorder
           h='100%'
-          w={320}
-          shadow='sm'
           padding='lg'
           radius='md'
+          shadow='sm'
           style={{ cursor: 'pointer' }}
-          withBorder
+          w={320}
         >
           <Stack h='100%' justify='space-between'>
             <Title>{state.product.price} ₽</Title>
@@ -42,9 +42,9 @@ const ProductPage = () => {
               </Text>
             </Stack>
             <Button
-              onClick={functions.onAddProductToCart}
               leftSection={<LuShoppingCart size={25} />}
               size='lg'
+              onClick={functions.onAddProductToCart}
             >
               Добавить в корзину
             </Button>

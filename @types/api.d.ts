@@ -14,7 +14,7 @@ interface ApiResponseFailure {
   success: false;
 }
 
-type ApiResponse<T> = (ApiResponseSuccess<T> | ApiResponseFailure) &
+type ApiResponse<T> = (ApiResponseFailure | ApiResponseSuccess<T>) &
   Omit<import('axios').AxiosResponse, 'data'>;
 
 type RequestConfig<Params = undefined> = Params extends undefined
@@ -28,22 +28,22 @@ type ApiRequestConfig = Omit<import('axios').AxiosRequestConfig, 'headers'> & {
 type BaseResponse = CommonError;
 
 interface Product {
-  id: number;
-  name: string;
-  description?: string;
-  price: number;
-  image: string;
-  created: string;
-  updated: string;
   count: number;
+  created: string;
+  description?: string;
+  id: number;
+  image: string;
+  name: string;
+  price: number;
+  updated: string;
 }
 
 interface Order {
+  address: string;
+  completed: string;
+  created: string;
+  fio: string;
   id: number;
   phoneNumber: string;
-  address: string;
-  fio: string;
-  created: string;
-  completed: string;
   products: Product[];
 }

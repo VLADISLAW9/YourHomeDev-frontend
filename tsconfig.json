@@ -32,6 +32,6 @@
     "isolatedModules": true,
     "skipLibCheck": true
   },
-  "include": ["*.js", "*.cjs", "**/*.ts", "**/*.tsx", "vite.config.ts", "eslint.config.js"],
+  "include": ["*.js", "*.cjs", "**/*.ts", "**/*.tsx", "vite.config.ts", "eslint.config.mjs"],
   "exclude": ["node_modules"]
 }

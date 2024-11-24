@@ -1,13 +1,14 @@
-import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { notifications } from '@mantine/notifications';
 import { useNavigate } from '@tanstack/react-router';
+import { useForm } from 'react-hook-form';
 
 import { usePostOrderMutation } from '@/src/utils/api/hooks';
 import { ROUTES } from '@/src/utils/constants';
 import { useCart } from '@/utils/contexts';
 
 import type { OrderFormSchema } from '../-constants';
+
 import { orderFormSchema } from '../-constants';
 
 export const useCartPage = () => {
@@ -96,8 +97,8 @@ export const useCartPage = () => {
     state: {
       cart: cart.value
         ? cart.value.filter(
-          (product, index, self) => self.findIndex((p) => p.id === product.id) === index
-        )
+            (product, index, self) => self.findIndex((p) => p.id === product.id) === index
+          )
         : [],
       totalCartPrice,
       loading: postOrderMutation.isPending

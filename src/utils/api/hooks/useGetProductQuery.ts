@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 
 import type { GetProductParams } from '@/utils/api';
+
 import { getProduct } from '@/utils/api';
 
 export const useGetProductQuery = (

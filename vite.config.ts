@@ -6,6 +6,7 @@ import { defineConfig } from 'vite';
 export default defineConfig(() => {
   const config = {
     plugins: [viteReact(), TanStackRouterVite()],
+    publicDir: 'static',
     server: {
       port: 3000
     },
