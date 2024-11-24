@@ -5,6 +5,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    environment:
+      - VITE_API_BACKEND_URL=http://194.87.238.194:8080
     container_name: frontend
     ports:
       - 80:80
